@@ -149,6 +149,12 @@ void Storage::try_parse(const QString &filename)
     p.setProgram(dir.absolutePath() + "/castxml.exe");
 #else
     dir.setPath("./linux/castxml/bin");
+
+    if (!QFile::exists(dir.absolutePath()))
+    {
+        dir.setPath("/usr/bin/castxml");
+    }
+
     p.setWorkingDirectory(dir.absolutePath());
     p.setProgram(dir.absolutePath() + "/castxml");
 #endif

@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     if (!Storage::instance()->check_directories())
     {
         QMessageBox::critical(nullptr, QObject::tr("Ошибка"), QObject::tr("Путь к CastXML не найден"));
-        return 1;
+        //return 1;
     }
 
     MainWindow w;
