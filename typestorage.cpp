@@ -152,7 +152,7 @@ void Storage::try_parse(const QString &filename)
 
     if (!QFile::exists(dir.absolutePath()))
     {
-        dir.setPath("/usr/bin/castxml");
+        dir.setPath("/usr/bin");
     }
 
     p.setWorkingDirectory(dir.absolutePath());
