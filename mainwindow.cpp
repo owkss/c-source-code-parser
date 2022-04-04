@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "exportview.h"
 #include "typestorage.h"
+#include "variabledialog.h"
 
 #include <QTimer>
 #include <QGridLayout>
@@ -22,7 +23,9 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 MainWindow::~MainWindow()
-{}
+{
+    delete m_code_editor_container;
+}
 
 void MainWindow::on_parse_error(const QString &errstr)
 {
@@ -35,16 +38,19 @@ void MainWindow::create_ui()
     QGridLayout *grid = new QGridLayout;
     m_view = new ExportView(container);
     m_choose_file_btn = new QPushButton(tr("Выбрать файл"), container);
+    m_open_textedit_btn = new QPushButton(tr("Ввод"), container);
 
     if (container->layout())
         delete container->layout();
 
-    grid->addWidget(m_view, 0, 0, 1, 2);
-    grid->addWidget(m_choose_file_btn, 1, 1);
+    grid->addWidget(m_view, 0, 0, 1, 3);
+    grid->addWidget(m_open_textedit_btn, 1, 1);
+    grid->addWidget(m_choose_file_btn, 1, 2);
     container->setLayout(grid);
 
     setCentralWidget(container);
 
+    connect(m_open_textedit_btn, &QPushButton::clicked, this, &MainWindow::open_variabledialog);
     connect(m_choose_file_btn, &QPushButton::clicked, this, &MainWindow::choose_file);
 }
 
@@ -62,5 +68,11 @@ void MainWindow::choose_file()
 
     QString fn = fd.selectedFiles().at(0);
     emit try_parse(fn);
+}
+
+void MainWindow::open_variabledialog()
+{
+    VariableDialog vd(this);
+    vd.exec();
 }
 

@@ -19,9 +19,12 @@ private:
     void create_ui();
 
     ExportView *m_view = nullptr;
+    QWidget *m_code_editor_container = nullptr;
     QPushButton *m_choose_file_btn = nullptr;
+    QPushButton *m_open_textedit_btn = nullptr;
 
     void choose_file();
+    void open_variabledialog();
 
 signals:
     void try_parse(const QString &filename);

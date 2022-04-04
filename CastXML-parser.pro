@@ -15,17 +15,23 @@ CONFIG(release, debug|release){
 INCLUDEPATH += $$PWD/rapidxml-1.13/
 
 SOURCES += \
+    codeeditor.cpp \
     exportmodel.cpp \
     exportview.cpp \
+    highlighter.cpp \
     main.cpp \
     mainwindow.cpp \
     typestorage.cpp \
+    variabledialog.cpp \
     xmlparsing.cpp
 
 HEADERS += \
+    codeeditor.h \
     exportmodel.h \
     exportview.h \
+    highlighter.h \
     mainwindow.h \
     test.h \
     type.h \
-    typestorage.h
+    typestorage.h \
+    variabledialog.h
