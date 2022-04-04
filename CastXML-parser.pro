@@ -26,5 +26,6 @@ HEADERS += \
     exportmodel.h \
     exportview.h \
     mainwindow.h \
+    test.h \
     type.h \
     typestorage.h

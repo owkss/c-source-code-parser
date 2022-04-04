@@ -66,15 +66,15 @@ bool Storage::check_directories()
     QString os_path;
     QString os_exe;
 #ifdef _WIN32
-    os_path = "./windows/";
+    os_path = "./windows";
     os_exe = "castxml.exe";
 #else
-    os_path = "./linux/";
+    os_path = "./linux";
     os_exe = "castxml";
 #endif
 
-    QDir castxml(os_path + "castxml/bin");
-    return QFile::exists(castxml.absolutePath() + "/" + os_exe);
+    QString path = QString("%1/castxml/bin/%2").arg(os_path).arg(os_exe);
+    return QFile::exists(path);
 }
 
 bool Storage::create_type(const QString &declaration)

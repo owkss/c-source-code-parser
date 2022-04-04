@@ -25,7 +25,7 @@ static bool find_fields(rapidxml::xml_node<> *root, const char *type_id, Complex
         rapidxml::xml_attribute<> *context_attr = n->first_attribute("context");
         if (!context_attr)
         {
-            std::cerr << "ther is no \"context\" attribute" << std::endl;
+            std::cerr << "there is no \"context\" attribute" << std::endl;
             return false;
         }
 
@@ -100,7 +100,7 @@ static AbstractType *find_type(rapidxml::xml_node<> *root, const char *type_id, 
         rapidxml::xml_attribute<> *id_attr = n->first_attribute("id");
         if (!id_attr)
         {
-            std::cerr << "ther is no \"id\" attribute" << std::endl;
+            std::cerr << "there is no \"id\" attribute" << std::endl;
             return nullptr;
         }
 
@@ -111,7 +111,7 @@ static AbstractType *find_type(rapidxml::xml_node<> *root, const char *type_id, 
                 rapidxml::xml_attribute<> *type_attr = n->first_attribute("type");
                 if (!type_attr)
                 {
-                    std::cerr << "ther is no \"type\" attribute" << std::endl;
+                    std::cerr << "there is no \"type\" attribute" << std::endl;
                     return nullptr;
                 }
 
@@ -129,7 +129,7 @@ static AbstractType *find_type(rapidxml::xml_node<> *root, const char *type_id, 
                 rapidxml::xml_attribute<> *type_attr = n->first_attribute("type");
                 if (!type_attr)
                 {
-                    std::cerr << "ther is no \"type\" attribute" << std::endl;
+                    std::cerr << "there is no \"type\" attribute" << std::endl;
                     return nullptr;
                 }
 
@@ -146,7 +146,7 @@ static AbstractType *find_type(rapidxml::xml_node<> *root, const char *type_id, 
                 rapidxml::xml_attribute<> *type_attr = n->first_attribute("type");
                 if (!type_attr)
                 {
-                    std::cerr << "ther is no \"type\" attribute" << std::endl;
+                    std::cerr << "there is no \"type\" attribute" << std::endl;
                     return nullptr;
                 }
 
@@ -172,7 +172,7 @@ static AbstractType *find_type(rapidxml::xml_node<> *root, const char *type_id, 
                 rapidxml::xml_attribute<> *type_attr = n->first_attribute("type");
                 if (!type_attr)
                 {
-                    std::cerr << "ther is no \"type\" attribute" << std::endl;
+                    std::cerr << "there is no \"type\" attribute" << std::endl;
                     return nullptr;
                 }
 
@@ -192,7 +192,7 @@ static AbstractType *find_type(rapidxml::xml_node<> *root, const char *type_id, 
                 rapidxml::xml_attribute<> *type_attr = n->first_attribute("type");
                 if (!type_attr)
                 {
-                    std::cerr << "ther is no \"type\" attribute" << std::endl;
+                    std::cerr << "there is no \"type\" attribute" << std::endl;
                     return nullptr;
                 }
 
