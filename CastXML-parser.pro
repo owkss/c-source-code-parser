@@ -1,3 +1,6 @@
+TARGET = parser
+TEMPLATE = app
+
 QT += core gui widgets
 CONFIG += c++11
 
@@ -35,3 +38,6 @@ HEADERS += \
     type.h \
     typestorage.h \
     variabledialog.h
+
+RESOURCES += \
+    images.qrc

@@ -28,7 +28,7 @@ VariableDialog::~VariableDialog()
 void VariableDialog::create_ui()
 {
     setMinimumSize(480, 360);
-    setWindowTitle(tr("Добавление новой экспортируемой переменной"));
+    setWindowTitle(tr("Добавление новой переменной"));
 
     m_source_group = new QGroupBox(tr("Исходный код"), this);
     m_source_edit = new CodeEditor(this);

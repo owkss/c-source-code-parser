@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     setMinimumSize(640, 480);
+    setWindowTitle(tr("Парсер и обозреватель исходного кода Си"));
+    setWindowIcon(QIcon(":/images/c.png"));
     create_ui();
 
     Storage *s = Storage::instance();
@@ -72,7 +74,11 @@ void MainWindow::choose_file()
 
 void MainWindow::open_variabledialog()
 {
+    disconnect(Storage::instance(), &Storage::parse_error, this, &MainWindow::on_parse_error); // ???
+
     VariableDialog vd(this);
     vd.exec();
+
+    connect(Storage::instance(), &Storage::parse_error, this, &MainWindow::on_parse_error);
 }
 
