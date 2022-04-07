@@ -8,9 +8,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    if (!Storage::instance()->check_directories())
+    if (!Storage::check_directories())
     {
-        QMessageBox::critical(nullptr, QObject::tr("Ошибка"), QObject::tr("Путь к CastXML не найден"));
+        QMessageBox::critical(nullptr, QObject::tr("Ошибка"), QObject::tr("Путь к CastXML не найден (%1)").arg(Storage::castxml_path()));
         //return 1;
     }
 

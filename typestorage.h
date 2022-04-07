@@ -18,6 +18,7 @@ public:
 
     static Storage *instance();
     static bool check_directories();
+    static QString castxml_path();
 
     QString path() const { return m_local_data_dir.path(); }
     QString make_path(const QString &filename) const { return m_local_data_dir.path() + "/" + filename; };

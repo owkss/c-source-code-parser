@@ -63,6 +63,11 @@ Storage *Storage::instance()
 
 bool Storage::check_directories()
 {
+    return QFile::exists(castxml_path());
+}
+
+QString Storage::castxml_path()
+{
     QString os_path;
     QString os_exe;
 #ifdef _WIN32
@@ -74,7 +79,7 @@ bool Storage::check_directories()
 #endif
 
     QString path = QString("%1/castxml/bin/%2").arg(os_path).arg(os_exe);
-    return QFile::exists(path);
+    return path;
 }
 
 bool Storage::create_type(const QString &declaration)
